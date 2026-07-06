@@ -73,9 +73,9 @@
         'Email: ' + (data.get('email') || '') + '\n\n' +
         (data.get('message') || '');
       window.location.href =
-        'mailto:hello@savrapp.com?subject=' + encodeURIComponent(subject) +
+        'mailto:carbonstroke@gmail.com?subject=' + encodeURIComponent(subject) +
         '&body=' + encodeURIComponent(body);
-      showStatus('ok', 'Opening your email app… if nothing happens, write to hello@savrapp.com.');
+      showStatus('ok', 'Opening your email app… if nothing happens, write to carbonstroke@gmail.com.');
       return;
     }
 
@@ -92,11 +92,11 @@
           form.reset();
           showStatus('ok', 'Thanks! Your message is on its way — we’ll reply soon.');
         } else {
-          showStatus('err', 'Something went wrong. Please email hello@savrapp.com instead.');
+          showStatus('err', 'Something went wrong. Please email carbonstroke@gmail.com instead.');
         }
       })
       .catch(function () {
-        showStatus('err', 'Network error. Please email hello@savrapp.com instead.');
+        showStatus('err', 'Network error. Please email carbonstroke@gmail.com instead.');
       })
       .finally(function () {
         if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = 'Send message'; }

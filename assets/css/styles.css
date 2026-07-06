@@ -159,14 +159,6 @@ h1, h2, h3, h4 {
   color: var(--brand);
 }
 
-/* Brand underline beneath each section's big heading */
-.eyebrow + h2 {
-  text-decoration: underline;
-  text-decoration-color: var(--brand);
-  text-decoration-thickness: 4px;
-  text-underline-offset: 10px;
-}
-
 .section { padding-block: clamp(56px, 9vw, 112px); }
 .section-head { max-width: 640px; margin-bottom: var(--s-3xl); }
 .section-head.center { margin-inline: auto; text-align: center; }

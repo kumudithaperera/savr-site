@@ -88,30 +88,8 @@
   --maxw: 1120px;
 }
 
-/* Warm dark theme — mirrors the app's warm dark palette */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --text: #FCF6EF;
-    --text-body: #EADFD3;
-    --muted: #B3A597;
-    --faint: #8A7D71;
-
-    --bg: #1B1511;
-    --surface-sunken: #241C17;
-    --card: #2A211B;
-
-    --border: #3A2F27;
-    --border-strong: #4A3F36;
-
-    --brand: var(--paprika-400);
-    --brand-hover: var(--paprika-300);
-    --brand-subtle: #3A241B;
-
-    --accent: var(--honey-300);
-    --fresh: var(--basil-300);
-  }
-}
-
+/* Light is the default theme. Warm dark applies only when the user opts in
+   via the theme toggle (data-theme='dark'), mirroring the app's dark palette. */
 :root[data-theme='dark'] {
   --text: #FCF6EF;
   --text-body: #EADFD3;
@@ -190,6 +168,23 @@ h1, h2, h3, h4 {
 .section-head h2 { font-size: clamp(30px, 4.6vw, 48px); margin-block: var(--s-lg) var(--s-md); }
 .section-head p { font-size: 19px; color: var(--muted); margin: 0; }
 
+/* Sections are separated by alternating shades of the warm background
+   (no gradients). `.tint` sits one step deeper than the base page. */
+.tint { background: var(--surface-sunken); border-block: 1px solid var(--border); }
+
+/* ---- Inline icons (flaticon-style line icons via an SVG sprite) ---- */
+.i {
+  width: 1em; height: 1em;
+  display: inline-block;
+  vertical-align: -0.14em;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex: none;
+}
+
 /* ---- Buttons ---- */
 .btn {
   display: inline-flex;
@@ -199,8 +194,8 @@ h1, h2, h3, h4 {
   font-family: var(--font-sans);
   font-weight: 600;
   font-size: 16px;
-  padding: 13px 24px;
-  border-radius: var(--r-pill);
+  padding: 9px 22px;
+  border-radius: 5px;
   border: 1.5px solid transparent;
   cursor: pointer;
   transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
@@ -220,7 +215,7 @@ h1, h2, h3, h4 {
   box-shadow: var(--shadow-sm);
 }
 .btn-ghost:hover { color: var(--text); border-color: var(--brand); }
-.btn-lg { padding: 16px 30px; font-size: 17px; }
+.btn-lg { padding: 11px 26px; font-size: 17px; }
 
 /* ========================================================================= */
 /* Header                                                                    */
@@ -265,11 +260,11 @@ h1, h2, h3, h4 {
   border-radius: var(--r-pill);
   width: 40px; height: 40px;
   cursor: pointer;
-  font-size: 17px;
   display: grid; place-items: center;
   color: var(--text);
   transition: border-color 0.15s ease;
 }
+.theme-toggle .i { width: 19px; height: 19px; }
 .theme-toggle:hover { border-color: var(--brand); }
 .nav-toggle { display: none; }
 
@@ -286,20 +281,10 @@ h1, h2, h3, h4 {
   overflow: hidden;
   padding-block: clamp(48px, 7vw, 88px) clamp(40px, 6vw, 72px);
 }
-.hero::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(60% 55% at 82% 8%, color-mix(in srgb, var(--honey-300) 34%, transparent), transparent 70%),
-    radial-gradient(70% 60% at 6% 92%, color-mix(in srgb, var(--paprika-200) 30%, transparent), transparent 68%);
-  opacity: 0.7;
-  pointer-events: none;
-}
 .hero-grid {
   position: relative;
   display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
+  grid-template-columns: 1fr 1.1fr;
   gap: clamp(24px, 5vw, 64px);
   align-items: center;
 }
@@ -322,29 +307,16 @@ h1, h2, h3, h4 {
   display: flex; align-items: center; gap: 8px;
 }
 
-/* Phone frame */
+/* Phone — device PNGs (frames baked in, transparent background) */
 .phone-shell {
   justify-self: center;
   position: relative;
-  width: min(300px, 78vw);
-}
-.phone-shell::after {
-  content: '';
-  position: absolute;
-  inset: -8% -14% -14%;
-  background: radial-gradient(closest-side, color-mix(in srgb, var(--paprika-300) 40%, transparent), transparent);
-  filter: blur(20px);
-  z-index: -1;
+  width: min(540px, 96%);
 }
 .phone-shell img {
   width: 100%;
-  border-radius: 34px;
-  border: 8px solid var(--ink-900);
-  box-shadow: var(--shadow-lg);
-  background: var(--ink-900);
+  filter: drop-shadow(0 22px 38px rgba(74, 63, 54, 0.24));
 }
-:root[data-theme='dark'] .phone-shell img,
-.badge-row .store-badge { }
 
 .badge-row {
   display: flex; flex-wrap: wrap; gap: var(--s-md);
@@ -437,9 +409,9 @@ h1, h2, h3, h4 {
   width: 52px; height: 52px;
   border-radius: var(--r-md);
   display: grid; place-items: center;
-  font-size: 24px;
   margin-bottom: var(--s-lg);
 }
+.feature .ico .i { width: 26px; height: 26px; stroke-width: 1.9; }
 .feature h3 { font-size: 20px; margin-bottom: var(--s-sm); }
 .feature p { margin: 0; color: var(--muted); font-size: 15.5px; }
 
@@ -494,12 +466,13 @@ h1, h2, h3, h4 {
   width: 22px; height: 22px; border-radius: var(--r-pill);
   background: color-mix(in srgb, var(--basil-500) 18%, transparent);
   color: var(--basil-600);
-  display: grid; place-items: center; font-size: 12px; font-weight: 800;
+  display: grid; place-items: center;
 }
+.feature-list .check .i { width: 13px; height: 13px; stroke-width: 2.6; }
+.media { justify-self: center; }
 .media img {
-  border-radius: var(--r-xl);
-  box-shadow: var(--shadow-md);
-  border: 1px solid var(--border);
+  width: min(300px, 74vw);
+  filter: drop-shadow(0 18px 30px rgba(74, 63, 54, 0.20));
 }
 @media (max-width: 780px) {
   .spotlight-grid { grid-template-columns: 1fr; }
@@ -523,8 +496,9 @@ h1, h2, h3, h4 {
 .contact-links .ci {
   width: 42px; height: 42px; border-radius: var(--r-md);
   background: var(--brand-subtle); color: var(--brand);
-  display: grid; place-items: center; font-size: 18px; flex: none;
+  display: grid; place-items: center; flex: none;
 }
+.contact-links .ci .i { width: 20px; height: 20px; }
 .contact-links a { font-weight: 600; }
 .contact-links small { display: block; color: var(--faint); font-weight: 400; font-size: 13px; }
 
@@ -590,7 +564,7 @@ h1, h2, h3, h4 {
 
 .cta-band { text-align: center; }
 .cta-inner {
-  background: linear-gradient(135deg, var(--paprika-500), var(--paprika-600));
+  background: var(--brand);
   border-radius: var(--r-xl);
   padding: clamp(36px, 6vw, 64px);
   box-shadow: var(--shadow-brand);

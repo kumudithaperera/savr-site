@@ -25,6 +25,27 @@
 </head>
 <body>
 
+  <!-- Icon sprite (flaticon-style line icons). Inlined so Safari renders <use>. -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-paperclip" viewBox="0 0 24 24"><path d="M21.44 11.05l-9.19 9.19a5 5 0 0 1-7.07-7.07l9.19-9.19a3.5 3.5 0 0 1 4.95 4.95l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2z"/></symbol>
+    <symbol id="i-offline" viewBox="0 0 24 24"><path d="M12 20h.01"/><path d="M8.5 16.5a5 5 0 0 1 7 0"/><path d="M2 8.82a15 15 0 0 1 4.17-2.65"/><path d="M10.66 5c4.01-.36 8.14.9 11.34 3.76"/><path d="M16.85 11.25a10 10 0 0 1 2.22 1.68"/><path d="M5 13a10 10 0 0 1 5.24-2.76"/><line x1="2" y1="2" x2="22" y2="22"/></symbol>
+    <symbol id="i-chef" viewBox="0 0 24 24"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></symbol>
+    <symbol id="i-contrast" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></symbol>
+    <symbol id="i-bug" viewBox="0 0 24 24"><path d="M9 7.13V6a3 3 0 1 1 6 0v1.13"/><path d="M12 20c-3.3 0-6-2.7-6-6v-3a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v3c0 3.3-2.7 6-6 6Z"/><path d="M12 20v-9"/><path d="M6.5 9C4.6 8.8 3 7.1 3 5"/><path d="M6 13H2"/><path d="M3 21c0-2.1 1.7-3.9 3.8-4"/><path d="M21 5c0 2.1-1.6 3.8-3.5 4"/><path d="M22 13h-4"/><path d="M17.2 17c2.1.1 3.8 1.9 3.8 4"/></symbol>
+    <symbol id="i-utensils" viewBox="0 0 24 24"><path d="M3 2v7a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V2"/><path d="M5 11v11"/><path d="M9 2v20"/><path d="M17 2c-1.7 0-3 1.8-3 4v6h6V6c0-2.2-1.3-4-3-4z"/><path d="M17 12v10"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></symbol>
+  </svg>
+
   <!-- ===================== Header ===================== -->
   <header class="site-header">
     <div class="wrap nav">
@@ -37,7 +58,7 @@
         <a class="link" href="#features">Features</a>
         <a class="link" href="#contact">Contact</a>
         <a class="link" href="privacy.html">Privacy</a>
-        <button class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
+        <button class="theme-toggle" type="button" aria-label="Toggle theme"><svg class="i"><use href="#i-moon"></use></svg></button>
         <a class="btn btn-primary" href="#contact">Get the app</a>
       </nav>
     </div>
@@ -49,18 +70,18 @@
     <section class="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow">📎 Paste · Save · Cook</span>
+          <span class="eyebrow"><svg class="i"><use href="#i-paperclip"></use></svg> Paste · Save · Cook</span>
           <h1>Save it once.<br />Cook it <span class="accent">forever.</span></h1>
-          <p class="hero-sub">Paste a link from Instagram, TikTok or any recipe blog — Savr pulls out the ingredients, steps and macros for you, and keeps them on your phone.</p>
+          <p class="hero-sub">Paste a link from Instagram, TikTok or any recipe blog - Savr pulls out the ingredients, steps and macros for you, and keeps them on your phone.</p>
           <div class="hero-cta">
             <a class="btn btn-primary btn-lg" href="#contact">Get early access</a>
             <a class="btn btn-ghost btn-lg" href="#how">See how it works</a>
           </div>
-          <p class="hero-note">🔒 Recipes live on your device — browse and cook fully offline.</p>
+          <p class="hero-note"><svg class="i"><use href="#i-lock"></use></svg> Recipes live on your device — browse and cook fully offline.</p>
         </div>
 
         <div class="phone-shell">
-          <img src="assets/img/phone-screenshot.png" alt="The Savr app home screen showing saved recipes with macros" />
+          <img src="assets/img/phone-duo.png" alt="Two Savr screens side by side — the saved-recipes home screen and the step-by-step Cook Mode" />
         </div>
       </div>
 
@@ -75,7 +96,7 @@
     </section>
 
     <!-- ===================== How it works ===================== -->
-    <section class="section" id="how">
+    <section class="section tint" id="how">
       <div class="wrap">
         <div class="section-head center reveal">
           <span class="eyebrow">How it works</span>
@@ -103,57 +124,57 @@
     </section>
 
     <!-- ===================== Feature showcase ===================== -->
-    <section class="section" id="features" style="padding-top:0;">
+    <section class="section" id="features">
       <div class="wrap">
         <div class="section-head center reveal">
           <span class="eyebrow">Feature showcase</span>
           <h2>Everything a recipe hoarder needs</h2>
-          <p>Built for the way you actually save and cook — warm, fast and yours.</p>
+          <p>Built for the way you actually save and cook - warm, fast and yours.</p>
         </div>
 
         <div class="features">
           <article class="feature reveal">
-            <div class="ico paprika">🔗</div>
+            <div class="ico paprika"><svg class="i"><use href="#i-link"></use></svg></div>
             <h3>Save from any link</h3>
             <p>Instagram, TikTok and recipe blogs. Savr prefers structured recipe data and falls back gracefully to page text.</p>
           </article>
           <article class="feature reveal">
-            <div class="ico honey">🔥</div>
+            <div class="ico honey"><svg class="i"><use href="#i-flame"></use></svg></div>
             <h3>Automatic macros</h3>
             <p>Calories, carbs, protein and fat on every recipe — estimated when the source doesn't state them.</p>
           </article>
           <article class="feature reveal">
-            <div class="ico basil">📂</div>
+            <div class="ico basil"><svg class="i"><use href="#i-folder"></use></svg></div>
             <h3>Categories &amp; folders</h3>
             <p>Meals, Drinks, Snacks and Desserts out of the box, plus custom folders for your own collections.</p>
           </article>
           <article class="feature reveal">
-            <div class="ico blueberry">📶</div>
+            <div class="ico blueberry"><svg class="i"><use href="#i-offline"></use></svg></div>
             <h3>Works offline</h3>
             <p>Recipes, folders and images live on-device. Only saving a new recipe needs the network.</p>
           </article>
           <article class="feature reveal">
-            <div class="ico paprika">👩‍🍳</div>
+            <div class="ico paprika"><svg class="i"><use href="#i-chef"></use></svg></div>
             <h3>Cook mode</h3>
             <p>A full-screen, one-step-at-a-time view with tap-to-advance zones, a progress bar and an ingredient peek.</p>
           </article>
           <article class="feature reveal">
-            <div class="ico sand">🔎</div>
+            <div class="ico sand"><svg class="i"><use href="#i-search"></use></svg></div>
             <h3>Search everything</h3>
             <p>Find recipes by title, ingredient, step, note, category, folder or source link — instantly.</p>
           </article>
           <article class="feature reveal">
-            <div class="ico basil">⚖️</div>
+            <div class="ico basil"><svg class="i"><use href="#i-scale"></use></svg></div>
             <h3>Scale &amp; convert</h3>
             <p>A serving stepper live-scales quantities and macros, with metric ⇄ imperial conversion built in.</p>
           </article>
           <article class="feature reveal">
-            <div class="ico honey">✅</div>
+            <div class="ico honey"><svg class="i"><use href="#i-check-circle"></use></svg></div>
             <h3>USDA cross-check</h3>
             <p>Optionally recompute macros from parsed ingredient weights against USDA FoodData Central.</p>
           </article>
           <article class="feature reveal">
-            <div class="ico blueberry">🌗</div>
+            <div class="ico blueberry"><svg class="i"><use href="#i-contrast"></use></svg></div>
             <h3>Light &amp; warm dark</h3>
             <p>A warm, food-forward theme in light and dark, with metric or imperial units — your preference, remembered.</p>
           </article>
@@ -165,9 +186,9 @@
     <section class="section spotlight">
       <div class="wrap spotlight-grid">
         <div class="reveal">
-          <span class="eyebrow">🔥 Nutrition</span>
+          <span class="eyebrow"><svg class="i"><use href="#i-flame"></use></svg> Nutrition</span>
           <h2 style="font-size:clamp(28px,4vw,42px);margin:16px 0 12px;">Know the macros before you cook</h2>
-          <p style="color:var(--muted);font-size:18px;">Every saved recipe gets a clean macro summary. When a source leaves them out, Savr estimates — and you can cross-check against the USDA database for the real numbers.</p>
+          <p style="color:var(--muted);font-size:18px;">Every saved recipe gets a clean macro summary. When a source leaves them out, Savr estimates - and you can cross-check against the USDA database for the real numbers.</p>
           <div class="macro-row">
             <span class="macro cal"><span class="v">510</span><span class="k">kcal</span></span>
             <span class="macro carb"><span class="v">8g</span><span class="k">carbs</span></span>
@@ -176,7 +197,7 @@
           </div>
         </div>
         <div class="media reveal">
-          <img src="assets/img/phone-screenshot.png" alt="Savr recipe list showing per-recipe macros" />
+          <img src="assets/img/phone-device.png" alt="Savr recipe list showing per-recipe macros" />
         </div>
       </div>
     </section>
@@ -185,17 +206,17 @@
     <section class="section">
       <div class="wrap spotlight-grid flip">
         <div class="media reveal">
-          <img src="assets/img/phone-screenshot.png" alt="Savr home screen with folders and category filters" />
+          <img src="assets/img/phone-device.png" alt="Savr home screen with folders and category filters" />
         </div>
         <div class="reveal">
-          <span class="eyebrow">📂 Your kitchen</span>
+          <span class="eyebrow"><svg class="i"><use href="#i-folder"></use></svg> Your kitchen</span>
           <h2 style="font-size:clamp(28px,4vw,42px);margin:16px 0 12px;">Organised the way you think about food</h2>
           <ul class="feature-list">
-            <li><span class="check">✓</span> Four built-in categories plus unlimited custom folders</li>
-            <li><span class="check">✓</span> Long-press multi-select for bulk delete or "add to folder"</li>
-            <li><span class="check">✓</span> A "View original" link back to the source post or page</li>
-            <li><span class="check">✓</span> Missing photos auto-backfilled and cached locally</li>
-            <li><span class="check">✓</span> Universal search across every field of every recipe</li>
+            <li><span class="check"><svg class="i"><use href="#i-check"></use></svg></span> Four built-in categories plus unlimited custom folders</li>
+            <li><span class="check"><svg class="i"><use href="#i-check"></use></svg></span> Long-press multi-select for bulk delete or "add to folder"</li>
+            <li><span class="check"><svg class="i"><use href="#i-check"></use></svg></span> A "View original" link back to the source post or page</li>
+            <li><span class="check"><svg class="i"><use href="#i-check"></use></svg></span> Missing photos auto-backfilled and cached locally</li>
+            <li><span class="check"><svg class="i"><use href="#i-check"></use></svg></span> Universal search across every field of every recipe</li>
           </ul>
         </div>
       </div>
@@ -205,20 +226,20 @@
     <section class="section spotlight" id="contact">
       <div class="wrap contact-grid">
         <div class="contact-copy reveal">
-          <span class="eyebrow">✉️ Contact us</span>
+          <span class="eyebrow"><svg class="i"><use href="#i-mail"></use></svg> Contact us</span>
           <h2>Say hello</h2>
-          <p>Questions, feedback, a bug, or want in on early access? Drop us a line and a real human will get back to you.</p>
+          <p>Questions, feedback, a bug, or want in on early access? Drop us a line and we will get back to you.</p>
           <ul class="contact-links">
             <li>
-              <span class="ci">✉️</span>
+              <span class="ci"><svg class="i"><use href="#i-mail"></use></svg></span>
               <span><a href="mailto:carbonstroke@gmail.com">carbonstroke@gmail.com</a><small>General &amp; support</small></span>
             </li>
             <li>
-              <span class="ci">🐞</span>
+              <span class="ci"><svg class="i"><use href="#i-bug"></use></svg></span>
               <span><a href="mailto:carbonstroke@gmail.com?subject=Bug%20report">Report a bug</a><small>Tell us what broke</small></span>
             </li>
             <li>
-              <span class="ci">🔒</span>
+              <span class="ci"><svg class="i"><use href="#i-lock"></use></svg></span>
               <span><a href="privacy.html">Privacy policy</a><small>How your data is handled</small></span>
             </li>
           </ul>
@@ -291,7 +312,7 @@
         <a href="#contact">Contact</a>
         <a href="privacy.html">Privacy policy</a>
       </nav>
-      <p class="footer-legal">© <span id="year">2026</span> Savr. Save it once, cook it forever. 🍳</p>
+      <p class="footer-legal">© <span id="year">2026</span> Savr. Save it once, cook it forever. <svg class="i"><use href="#i-utensils"></use></svg></p>
     </div>
   </footer>
 

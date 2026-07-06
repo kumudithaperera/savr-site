@@ -10,14 +10,15 @@
   if (stored === 'dark' || stored === 'light') root.setAttribute('data-theme', stored);
 
   function currentTheme() {
-    var attr = root.getAttribute('data-theme');
-    if (attr) return attr;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    // Light is the default; dark only when the user has explicitly chosen it.
+    return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
   }
   function paintToggle() {
     if (!toggle) return;
     var isDark = currentTheme() === 'dark';
-    toggle.textContent = isDark ? '☀️' : '🌙'; // sun / moon
+    var use = toggle.querySelector('use');
+    // Show the icon of the theme you'd switch TO: sun in dark, moon in light.
+    if (use) use.setAttribute('href', isDark ? '#i-sun' : '#i-moon');
     toggle.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
   }
   if (toggle) {
